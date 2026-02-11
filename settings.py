@@ -17,6 +17,10 @@ TILE_SIZE = 32  # pixels
 # Frame rate
 FPS = 60
 
+# Player movement configuration (pixels per second)
+# Adjust this to make the player move faster/slower while keeping movement smooth.
+PLAYER_SPEED_PIXELS_PER_SECOND = 180
+
 # Colors (R, G, B)
 COLOR_BLACK = (0, 0, 0)
 COLOR_FLOOR = (50, 50, 50)

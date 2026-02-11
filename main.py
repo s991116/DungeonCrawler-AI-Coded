@@ -37,6 +37,10 @@ def main() -> None:
 
     running = True
     while running:
+        # Limit FPS and compute delta time in seconds for smooth movement.
+        dt_ms = clock.tick(FPS)
+        dt = dt_ms / 1000.0
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -44,14 +48,13 @@ def main() -> None:
                 running = False
 
         pressed = pygame.key.get_pressed()
-        player.update_from_keys(tile_map, pressed)
+        player.update_from_keys(tile_map, pressed, dt)
 
         screen.fill(COLOR_BLACK)
         game_map.draw_map(screen, tile_map)
         player.draw(screen)
 
         pygame.display.flip()
-        clock.tick(FPS)
 
     pygame.quit()
     sys.exit(0)
