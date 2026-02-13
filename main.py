@@ -32,8 +32,8 @@ def main() -> None:
     clock = pygame.time.Clock()
 
     tile_map = game_map.load_demo_map()
-    # Start roughly in the center of the room (adjust as needed).
-    player = Player(tile_x=5, tile_y=5)
+    # Start at the labyrinth entrance (with 2-tile wide paths, start at (2, 2)).
+    player = Player(tile_x=2, tile_y=2)
 
     running = True
     while running:
